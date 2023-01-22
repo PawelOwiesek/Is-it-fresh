@@ -1,0 +1,147 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after::before {
+    box-sizing: inherit;
+}
+
+.body {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #283839;
+    border: 1px solid #767676;
+    padding-top: 20px;
+}
+
+@media(max-width:300px) {
+    .body {
+        flex-basis: 80%;
+        word-wrap: break-word;
+    }
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 350px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+@media(max-width:367px) {
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.header__title {
+    grid-column-start: 2;
+}
+
+.header__timeString {
+    border: 1px solid #de96a5;
+    max-width: 350px;
+    padding: 10px;
+    margin: 15px;
+    background-color: #008080;
+    color: #ffffff;
+    font-size: 20px;
+    grid-column-start: 3;
+    align-self: start;
+
+}
+
+/* @media(max-width:367px) {
+    .header__timeString {
+        flex-basis: 70%;
+        margin-left: 10px;
+    }
+} */
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    background-color: #ffffff;
+    row-gap: 20px;
+}
+
+@media(max-width:367px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 70%;
+    }
+}
+
+.form__title {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    color: #040404
+}
+
+.form__products {
+    font-size: 26px;
+    padding-left: 10px;
+}
+
+.form__date {
+    font-size: 26px;
+    padding-left: 10px;
+}
+
+.form__input--text {
+    margin-left: 10px;
+    font-size: 18px;
+    padding: 5px;
+    max-width: 200px;
+}
+
+.form__input {
+    margin-left: 10px;
+    font-size: 18px;
+    padding: 5px;
+    max-width: 150px;
+}
+
+.button {
+    grid-column-start: 2;
+    margin: 0 0 10px 50px;
+    font-size: 25px;
+    background-color: teal;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    max-width: 300px;
+    align-self: auto;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 2px solid black;
+    margin-top: 20px;
+    background-color: #ffffff;
+    min-height: 100px;
+    font-size: 20px;
+}
+
+.list__item {
+    /* display: grid; */
+    /* grid-template-columns: 2fr 1fr 1fr; */
+    word-break: break-all;
+    border-bottom: 1px solid #040404;
+    /* max-width: fit-content; */
+    list-style: none;
+    padding-bottom: 10px;
+    margin: 10px;
+}
+
+.list__item--exDate {
+    grid-column-start: 2;
+    max-width: fit-content;
+    margin-right: 10px;
+}
