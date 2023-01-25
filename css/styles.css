@@ -38,6 +38,7 @@ html {
 
 .header__title {
     grid-column-start: 2;
+    color: #ffffff;
 }
 
 .header__timeString {
@@ -101,7 +102,7 @@ html {
     margin-right: 10px;
     font-size: 18px;
     padding: 5px;
-    max-width: 150px;
+    max-width: 350px;
 }
 
 @media(max-width:600px) {
