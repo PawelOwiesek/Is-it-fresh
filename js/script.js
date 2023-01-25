@@ -34,7 +34,7 @@
     const headerTime = () => {
         const now = new Date();
         const timeString = document.querySelector(".js-timeString");
-        timeString.innerText = now.toLocaleString('pl', {
+        timeString.innerText = now.toLocaleString('en', {
             dateStyle: "full",
             timeStyle: "medium",
         });
