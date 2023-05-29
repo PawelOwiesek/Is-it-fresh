@@ -19,6 +19,12 @@
     renderProducts();
   };
 
+  const clearInput = () => {
+    const newTask = document.querySelector(".js-newTask");
+    newTask.value = "";
+    newTask.focus();
+  };
+
   const renderProducts = () => {
     let htmlString = "";
     products.forEach((product) => {
@@ -46,6 +52,7 @@
     const timeLeft = document.querySelector(".js-timeLeft").value;
 
     addNewproduct(newProduct, startingDate, timeLeft);
+    clearInput();
   };
 
   const init = () => {
