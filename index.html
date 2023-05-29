@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="js/script.js"></script>
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <title>Is it fresh?</title>
-</head>
+  </head>
 
-<body class="body">
+  <body class="body">
     <header class="header js-header">
-        <h1 class="header__title">Fresh check list.</h1>
-        <p class="header__timeString js-timeString"></p>
+      <h1 class="header__title">Fresh check list.</h1>
+      <p class="header__timeString js-timeString"></p>
     </header>
     <main>
-        <section>
-            <form class="form js-form">
-
-                <h2 class="form__title">List of products and the expiration date.</h2>
-                <p>
-                    <label class="form__products ">Add a new product:</label><input class="form__input--text js-newTask js-addProducts"
-                        name="product" required>
-                </p>
-                <p>
-                    <label class="form__date">Set the entry date:</label><input class="form__input js-dateInput" type="date"
-                        required>
-                </p>
-                <p>
-                    <labe class="form__date">Expiration date:</labe><input class="form__input js-timeLeft" type="date" required>
-                </p>
-                <button class="button js-button">Add product to list.</button>
-            </form>
-        </section>
-        <section class=>
-            <ul class="js-tasks js-dates list">
-            </ul>
-           
-        </section>
+      <section>
+        <form class="form js-form">
+          <h2 class="form__title">List of products and the expiration date.</h2>
+          <p>
+            <label class="form__products">Add a new product:</label
+            ><input
+              class="form__input--text js-newProduct js-addProducts"
+              name="product"
+              required
+            />
+          </p>
+          <p>
+            <label class="form__date">Set the entry date:</label
+            ><input class="form__input js-dateInput" type="date" />
+          </p>
+          <p>
+            <labe class="form__date">Expiration date:</labe
+            ><input class="form__input js-timeLeft" type="date" />
+          </p>
+          <button class="button js-button">Add product to list.</button>
+        </form>
+      </section>
+      <section>
+        <ul class="js-productsList js-dates list"></ul>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
