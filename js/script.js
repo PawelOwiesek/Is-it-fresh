@@ -19,11 +19,24 @@
     return `${days} days ${hours} hours ${minutes} minutes ${remainingSeconds} seconds`;
   };
 
-  const addNewproduct = (newProduct, startingDate, timeLeft) => {
+  const timeCalculation = () => {
+    products.forEach(({ timeOut }) => {
+      const currentTime = new Date();
+      const endTime = new Date(timeOut);
+
+      const timer = Math.floor((endTime - currentTime) / 1000);
+      const formatedTime = formatTime(timer);
+      const timeFlow = formatedTime.toLocaleString();
+    });
+    renderProducts();
+  };
+
+  const addNewproduct = (newProduct, startingDate, timeLeft, timeFlow) => {
     products.push({
       product: newProduct,
       timeIn: startingDate,
       timeOut: timeLeft,
+      timeFlow: timeFlow,
     });
     renderProducts();
   };
@@ -37,21 +50,28 @@
   const renderProducts = () => {
     let htmlString = "";
     products.forEach((product) => {
+      const currentTime = new Date();
+      const endTime = new Date(product.timeOut);
+      const timer = Math.floor((endTime - currentTime) / 1000);
+      const formatedTime = formatTime(timer);
+      const timeFlow = formatedTime.toLocaleString();
+
       htmlString += `
-          <li class="list__item">${product.product}</li> 
-          <span class="list__item--exDate">
-            <label>Date in:</label>
-            <input value="${product.timeIn}" class="form__input js-formImput" name="expier date" readonly>
-          </span> 
-          <span>
-            <label>Date out:</label>
-            <input value="${product.timeOut} " class="form__input" name="time" readonly>
-          </span>
-         
-        `;
+        <li class="list__item">${product.product}</li> 
+        <span class="list__item--dateIn">
+          <label>Date in:
+          <input value=${product.timeIn} class="form__input js-formInput" name="expire date" readonly></label>
+        </span> 
+        <span class="list__item--exDate">
+          <label>Date out:
+          <input value=${product.timeOut}  class="form__input" name="time" readonly></label>
+        </span>
+        <span class="list__item--timeFlow">${timeFlow}</span>
+      `;
     });
-    const tasksContainer = document.querySelector(".js-productsList");
-    tasksContainer.innerHTML = htmlString;
+
+    const productsContainer = document.querySelector(".js-productsList");
+    productsContainer.innerHTML = htmlString;
   };
 
   const onFormSubmit = (e) => {
@@ -59,13 +79,21 @@
     const newProduct = document.querySelector(".js-addProduct").value.trim();
     const startingDate = document.querySelector(".js-dateInput").value;
     const timeLeft = document.querySelector(".js-timeLeft").value;
-
+    const currentTime = new Date();
+    const endTime = new Date(timeLeft);
+    const timer = Math.floor((endTime - currentTime) / 1000);
+    const formatedTime = formatTime(timer);
+    const timeFlow = formatedTime.toLocaleString();
+    setInterval(timeCalculation, 1000);
     if (!newProduct) {
       return;
     }
-
-    addNewproduct(newProduct, startingDate, timeLeft);
+    timeCalculation();
+    addNewproduct(newProduct, startingDate, timeLeft, timeFlow);
     clearInput();
+
+    console.log(timeFlow.toLocaleString());
+    console.log(products);
   };
 
   const init = () => {
@@ -75,5 +103,6 @@
     setInterval(headerTime, 1000);
     renderProducts();
   };
+
   init();
 }
