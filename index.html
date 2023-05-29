@@ -31,20 +31,28 @@
         <form class="form js-form">
           <h2 class="form__title">List of products and the expiration date.</h2>
           <p>
-            <label class="form__products">Add a new product:</label
-            ><input
-              class="form__input--text js-newProduct js-addProduct"
-              name="product"
-              required
-            />
+            <label class="form__products"
+              >Add a new product:
+              <input
+                class="form__input--text js-newProduct js-addProduct"
+                name="product"
+                required
+              />
+            </label>
           </p>
           <p>
-            <label class="form__date">Set the entry date:</label
-            ><input class="form__input js-dateInput" type="date" />
+            <label class="form__date"
+              >Set the entry date:
+              <input class="form__input js-dateInput" type="date" />
+            </label>
           </p>
           <p>
-            <labe class="form__date">Expiration date:</labe
-            ><input class="form__input js-timeLeft" type="date" />
+            <label class="form__date"
+              >Expiration date:<input
+                class="form__input js-timeLeft"
+                type="date"
+              />
+            </label>
           </p>
           <button class="button js-button">Add product to list.</button>
         </form>
@@ -52,6 +60,7 @@
       <section>
         <ul class="js-productsList js-dates list"></ul>
       </section>
+      <span class="calculatedTime"></span>
     </main>
   </body>
 </html>
