@@ -10,6 +10,15 @@
 
   const products = [];
 
+  const formatTime = (seconds) => {
+    const days = Math.floor(seconds / (3600 * 24));
+    const hours = Math.floor((seconds % (3600 * 24)) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    return `${days} days ${hours} hours ${minutes} minutes ${remainingSeconds} seconds`;
+  };
+
   const addNewproduct = (newProduct, startingDate, timeLeft) => {
     products.push({
       product: newProduct,
