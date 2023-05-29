@@ -20,9 +20,9 @@
   };
 
   const clearInput = () => {
-    const newTask = document.querySelector(".js-newTask");
-    newTask.value = "";
-    newTask.focus();
+    const newProductInput = document.querySelector(".js-newProduct");
+    newProductInput.value = "";
+    newProductInput.focus();
   };
 
   const renderProducts = () => {
@@ -47,9 +47,13 @@
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const newProduct = document.querySelector(".js-newProduct").value;
+    const newProduct = document.querySelector(".js-addProduct").value.trim();
     const startingDate = document.querySelector(".js-dateInput").value;
     const timeLeft = document.querySelector(".js-timeLeft").value;
+
+    if (!newProduct) {
+      return;
+    }
 
     addNewproduct(newProduct, startingDate, timeLeft);
     clearInput();
