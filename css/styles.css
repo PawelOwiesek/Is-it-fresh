@@ -1,159 +1,161 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 ::after::before {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .body {
-    max-width: 1400px;
-    margin: 0 auto;
-    background-color: #283839;
-    border: 1px solid #767676;
-    padding-top: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #283839;
+  border: 1px solid #767676;
+  padding-top: 20px;
 }
 
-@media(max-width:600px) {
-    .body {
-        flex-basis: 80%;
-        word-wrap: break-word;
-    }
+@media (max-width: 600px) {
+  .body {
+    flex-basis: 80%;
+    word-wrap: break-word;
+  }
 }
 
 .header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 350px;
-    margin-bottom: 20px;
-    word-wrap: break-word;
+  display: grid;
+  grid-template-columns: 1fr 1fr 350px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
-@media(max-width:600px) {
-    .header {
-        display: flex;
-        flex-direction: column;
-    }
+@media (max-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .header__title {
-    grid-column-start: 2;
-    color: #ffffff;
+  grid-column-start: 2;
+  color: #ffffff;
 }
 
 .header__timeString {
-    border: 1px solid #de96a5;
-    max-width: 350px;
-    padding: 10px;
-    margin: 15px;
-    background-color: #008080;
-    color: #ffffff;
-    font-size: 20px;
-    grid-column-start: 3;
-    align-self: start;
-
+  border: 1px solid #de96a5;
+  max-width: 350px;
+  padding: 10px;
+  margin: 15px;
+  background-color: #008080;
+  color: #ffffff;
+  font-size: 20px;
+  grid-column-start: 3;
+  align-self: start;
 }
 
 .form {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px;
-    background-image:url(https://thumbs.dreamstime.com/z/orange-fruit-fresh-cutting-slicing-image-background-52381569.jpg);
-    background-size: cover;
-    row-gap: 20px;
-    color: #000000;
-    font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  background-image: url(https://thumbs.dreamstime.com/z/orange-fruit-fresh-cutting-slicing-image-background-52381569.jpg);
+  background-size: cover;
+  row-gap: 20px;
+  color: #000000;
+  font-weight: bold;
 }
 
-@media(max-width:600px) {
-    .form {
-        display: flex;
-        flex-direction: column;
-        flex-basis: 70%;
-    }
+@media (max-width: 600px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+  }
 }
 
 .form__title {
-    display: grid;
-    grid-column-start: 2;
-    grid-column-end: 4;
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 
 .form__products {
-    font-size: 26px;
-    padding-left: 10px;
-    color: #040404;
+  font-size: 26px;
+  padding-left: 10px;
+  color: #040404;
 }
 
 .form__date {
-    font-size: 26px;
-    padding-left: 10px;
+  font-size: 26px;
+  padding-left: 10px;
 }
 
 .form__input--text {
-    margin-left: 10px;
-    font-size: 18px;
-    padding: 5px;
-    max-width: 200px;
+  margin-left: 10px;
+  font-size: 18px;
+  padding: 5px;
+  max-width: 200px;
 }
 
 .form__input {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 18px;
-    padding: 5px;
-    max-width: 350px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  padding: 5px;
+  max-width: 400px;
 }
 
-@media(max-width:600px) {
-    .form__input {
-        display: flex;
-        justify-content: flex-end;
-    }
+@media (max-width: 600px) {
+  .form__input {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .button {
-    grid-column-start: 2;
-    margin: 0 0 10px 50px;
-    font-size: 25px;
-    background-color: teal;
-    color: #ffffff;
-    border: none;
-    border-radius: 25px;
-    padding: 10px;
-    max-width: 300px;
-    align-self: auto;
+  grid-column-start: 2;
+  margin: 0 0 10px 50px;
+  font-size: 25px;
+  background-color: teal;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  max-width: 300px;
+  align-self: auto;
 }
 
 .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 10px;
-    border: 2px solid black;
-    margin-top: 20px;
-    background-color: hsl(180, 100%, 20%);
-    font-size: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  border: 2px solid black;
+  margin-top: 20px;
+  background-color: hsl(180, 100%, 20%);
+  font-size: 25px;
 }
 
-@media(max-width:600px) {
-    .list {
-        display: flex;
-        flex-direction: column;
-        margin: 10px;
-        padding: 5px;
-    }
+@media (max-width: 600px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+  }
 }
 
 .list__item {
-    word-break: break-all;
-    background-color: #ffffff;
-    list-style: none;
-    border: 1px solid black;
-    padding: 5px;
+  word-break: break-all;
+  background-color: #ffffff;
+  list-style: none;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  align-self: end;
+  width: 300px;
 }
 
 .list__item--exDate {
-    grid-column-start: 2;
-    max-width: fit-content;
-    margin-right: 10px;
+  grid-column-start: 2;
+  max-width: fit-content;
+  margin-right: 10px;
 }
