@@ -16,14 +16,13 @@
     const minutes = Math.floor((seconds % 3600) / 60);
     const remainingSeconds = seconds % 60;
 
-    return `${days} days ${hours} hours ${minutes} minutes ${remainingSeconds} seconds`;
+    return `${days} days ${hours} hours ${minutes} min ${remainingSeconds} s`;
   };
 
   const timeCalculation = () => {
     products.forEach(({ timeOut }) => {
       const currentTime = new Date();
       const endTime = new Date(timeOut);
-
       const timer = Math.floor((endTime - currentTime) / 1000);
       const formatedTime = formatTime(timer);
       const timeFlow = formatedTime.toLocaleString();
@@ -91,9 +90,6 @@
     timeCalculation();
     addNewproduct(newProduct, startingDate, timeLeft, timeFlow);
     clearInput();
-
-    console.log(timeFlow.toLocaleString());
-    console.log(products);
   };
 
   const init = () => {
