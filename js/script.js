@@ -1,4 +1,13 @@
 {
+  const headerTime = () => {
+    const now = new Date();
+    const timeString = document.querySelector(".js-timeString");
+    timeString.innerText = now.toLocaleString("nl", {
+      dateStyle: "full",
+      timeStyle: "medium",
+    });
+  };
+
   const products = [];
 
   const addNewproduct = (newProduct, startingDate, timeLeft) => {
@@ -42,6 +51,8 @@
   const init = () => {
     const form = document.querySelector(".js-form");
     form.addEventListener("submit", onFormSubmit);
+    headerTime();
+    setInterval(headerTime, 1000);
     renderProducts();
   };
   init();
