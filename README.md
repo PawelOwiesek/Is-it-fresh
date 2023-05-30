@@ -2,6 +2,7 @@
 
 ![Screenshot 2023-05-30 173442](https://github.com/PawelOwiesek/Is-it-fresh-/assets/121549413/0f45d46e-46a7-43e1-a669-954f8b4be9c8)
 
+![Animation Is-It-Fresh](https://github.com/PawelOwiesek/Is-it-fresh-/assets/121549413/60c8a904-9781-409d-a5f3-82180f0f6866)
 
 ## This application is a simple product tracker. It allows users to add products along with their starting date and expiration date. The application calculates and displays the remaining time for each product, showing the number of days, hours, minutes, and seconds left until the expiration date.
 
