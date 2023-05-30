@@ -8,7 +8,13 @@
     });
   };
 
-  let products = [];
+  let products = [
+    {
+      product: "Ogorki",
+      timeIn: "2023-06-18 07:06:00",
+      timeOut: "2023-06-18 07:06:00",
+    },
+  ];
 
   const formatTime = (seconds) => {
     const days = Math.floor(seconds / (3600 * 24));
@@ -60,6 +66,7 @@
       const timeFlow = formatedTime.toLocaleString();
 
       htmlString += `
+      
         <li class="list__item">${product.product}</li> 
         <span class="list__item--dateIn">
           <label>Date in:
@@ -70,6 +77,7 @@
           <input value=${product.timeOut}  class="form__input" name="time" readonly></label>
         </span>
         <span class="list__item--timeFlow">Time left: ${timeFlow}</span>
+        <button class="removeButton">🗑</button>
       `;
     });
 
