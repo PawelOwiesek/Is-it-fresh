@@ -25,7 +25,7 @@
       const endTime = new Date(timeOut);
       const timer = Math.floor((endTime - currentTime) / 1000);
       const formatedTime = formatTime(timer);
-      const timeFlow = formatedTime.toLocaleString();
+      formatedTime.toLocaleString();
     });
     renderProducts();
   };
@@ -65,7 +65,7 @@
           <label>Date out:
           <input value=${product.timeOut}  class="form__input" name="time" readonly></label>
         </span>
-        <span class="list__item--timeFlow">${timeFlow}</span>
+        <span class="list__item--timeFlow">Pozostalo: ${timeFlow}</span>
       `;
     });
 
