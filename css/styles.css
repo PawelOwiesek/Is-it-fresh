@@ -126,7 +126,7 @@ html {
 
 .list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 50px;
   column-gap: 10px;
   border: 2px solid black;
   margin-top: 20px;
@@ -166,4 +166,10 @@ html {
   grid-column-start: 4;
   max-width: fit-content;
   margin: 15px;
+}
+.removeButton {
+  margin-top: 25px;
+  height: 30px;
+  width: 30px;
+  background-color: #ffffff;
 }
