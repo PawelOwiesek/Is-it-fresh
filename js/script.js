@@ -8,7 +8,7 @@
     });
   };
 
-  const products = [];
+  let products = [];
 
   const formatTime = (seconds) => {
     const days = Math.floor(seconds / (3600 * 24));
@@ -31,12 +31,16 @@
   };
 
   const addNewproduct = (newProduct, startingDate, timeLeft, timeFlow) => {
-    products.push({
-      product: newProduct,
-      timeIn: startingDate,
-      timeOut: timeLeft,
-      timeFlow: timeFlow,
-    });
+    products = [
+      ...products,
+      {
+        product: newProduct,
+        timeIn: startingDate,
+        timeOut: timeLeft,
+        timeFlow: timeFlow,
+      },
+    ];
+    console.log(products);
     renderProducts();
   };
 
