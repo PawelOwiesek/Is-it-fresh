@@ -65,7 +65,7 @@
           <label>Date out:
           <input value=${product.timeOut}  class="form__input" name="time" readonly></label>
         </span>
-        <span class="list__item--timeFlow">Pozostalo: ${timeFlow}</span>
+        <span class="list__item--timeFlow">Time left: ${timeFlow}</span>
       `;
     });
 
