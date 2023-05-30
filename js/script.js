@@ -37,6 +37,7 @@
   };
 
   const addNewproduct = (newProduct, startingDate, timeLeft, timeFlow) => {
+    console.log(products);
     products = [
       ...products,
       {
@@ -46,7 +47,7 @@
         timeFlow: timeFlow,
       },
     ];
-
+    console.log(products);
     renderProducts();
     deleteProduct();
   };
