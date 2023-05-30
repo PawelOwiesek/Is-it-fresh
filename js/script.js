@@ -1,8 +1,8 @@
 {
   const headerTime = () => {
-    const now = new Date();
+    const actualDate = new Date();
     const timeString = document.querySelector(".js-timeString");
-    timeString.innerText = now.toLocaleString("nl", {
+    timeString.innerText = actualDate.toLocaleString("nl", {
       dateStyle: "full",
       timeStyle: "medium",
     });
