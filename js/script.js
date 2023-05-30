@@ -10,7 +10,7 @@
 
   let products = [
     {
-      product: "Ogorki",
+      product: "Tomatoes",
       timeIn: "2023-06-18 07:06:00",
       timeOut: "2023-06-18 07:06:00",
     },
@@ -30,8 +30,8 @@
       const currentTime = new Date();
       const endTime = new Date(timeOut);
       const timer = Math.floor((endTime - currentTime) / 1000);
-      const formatedTime = formatTime(timer);
-      formatedTime.toLocaleString();
+      const formattedTime = formatTime(timer);
+      formattedTime.toLocaleString();
     });
     renderProducts();
   };
@@ -46,8 +46,9 @@
         timeFlow: timeFlow,
       },
     ];
-    console.log(products);
+
     renderProducts();
+    deleteProduct();
   };
 
   const clearInput = () => {
@@ -56,15 +57,33 @@
     newProductInput.focus();
   };
 
+  const removeProduct = (index) => {
+    products = [...products.slice(0, index), ...products.slice(index + 1)];
+
+    renderProducts();
+  };
+
+  const deleteProduct = () => {
+    const deleteButtons = document.querySelectorAll(".removeButton");
+
+    deleteButtons.forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        removeProduct(index);
+        deleteProduct();
+        console.log("hello");
+      });
+    });
+  };
+
   const renderProducts = () => {
     let htmlString = "";
     products.forEach((product) => {
       const currentTime = new Date();
       const endTime = new Date(product.timeOut);
       const timer = Math.floor((endTime - currentTime) / 1000);
-      const formatedTime = formatTime(timer);
-      const timeFlow = formatedTime.toLocaleString();
-
+      const formattedTime = formatTime(timer);
+      const timeFlow = formattedTime.toLocaleString();
+      if (!products) return;
       htmlString += `
       
         <li class="list__item">${product.product}</li> 
@@ -93,9 +112,10 @@
     const currentTime = new Date();
     const endTime = new Date(timeLeft);
     const timer = Math.floor((endTime - currentTime) / 1000);
-    const formatedTime = formatTime(timer);
-    const timeFlow = formatedTime.toLocaleString();
-    setInterval(timeCalculation, 1000);
+    const formattedTime = formatTime(timer);
+    const timeFlow = formattedTime.toLocaleString();
+    // const intervalId = setInterval(timeCalculation, 1000);
+
     if (!newProduct) {
       return;
     }
@@ -110,6 +130,7 @@
     headerTime();
     setInterval(headerTime, 1000);
     renderProducts();
+    deleteProduct();
   };
 
   init();
