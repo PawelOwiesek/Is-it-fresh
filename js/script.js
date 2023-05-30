@@ -60,7 +60,6 @@
 
   const removeProduct = (index) => {
     products = [...products.slice(0, index), ...products.slice(index + 1)];
-
     renderProducts();
   };
 
@@ -71,7 +70,6 @@
       deleteButton.addEventListener("click", () => {
         removeProduct(index);
         deleteProduct();
-        console.log("hello");
       });
     });
   };
