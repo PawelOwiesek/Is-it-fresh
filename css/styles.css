@@ -32,6 +32,7 @@ html {
 @media (max-width: 600px) {
   .header {
     display: flex;
+    text-align: center;
     flex-direction: column;
   }
 }
@@ -52,7 +53,11 @@ html {
   grid-column-start: 3;
   align-self: start;
 }
-
+@media (max-width: 600px) {
+  .header__timeString {
+    align-self: center;
+  }
+}
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -69,6 +74,8 @@ html {
     display: flex;
     flex-direction: column;
     flex-basis: 70%;
+    text-align: center;
+    align-items: center;
   }
 }
 
@@ -124,6 +131,12 @@ html {
   align-self: auto;
 }
 
+@media (max-width: 600px) {
+  .button {
+    width: 100vw;
+    margin: 10px 0;
+  }
+}
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 50px;
@@ -138,6 +151,7 @@ html {
   .list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 10px;
     padding: 5px;
   }
@@ -152,6 +166,11 @@ html {
   align-self: center;
   width: 300px;
 }
+@media (max-width: 600px) {
+  .list__item {
+    text-align: center;
+  }
+}
 
 .list__item--exDate,
 .list__item--dateIn {
@@ -165,13 +184,23 @@ html {
 .list__item--timeFlow {
   grid-column-start: 4;
   max-width: fit-content;
+  text-align: center;
   margin: 15px;
   background-color: #fff;
   padding: 5px;
+  font-size: 20px;
 }
 .removeButton {
   margin-top: 30px;
   height: 30px;
   width: 30px;
   background-color: #f80101;
+  color: #ffffff;
+}
+@media (max-width: 600px) {
+  .removeButton {
+    margin-bottom: 30px;
+    margin-top: 5px;
+    width: 100px;
+  }
 }
