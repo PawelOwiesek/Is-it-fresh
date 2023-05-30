@@ -25,6 +25,8 @@
     return `${days} days ${hours} hours ${minutes} min ${remainingSeconds} s`;
   };
 
+  let intervalId;
+
   const timeCalculation = () => {
     products.forEach(({ timeOut }) => {
       const currentTime = new Date();
@@ -36,8 +38,11 @@
     renderProducts();
   };
 
+  const startInterval = () => {
+    intervalId = setInterval(timeCalculation, 1000);
+  };
+
   const addNewproduct = (newProduct, startingDate, timeLeft, timeFlow) => {
-    console.log(products);
     products = [
       ...products,
       {
@@ -47,7 +52,6 @@
         timeFlow: timeFlow,
       },
     ];
-    console.log(products);
     renderProducts();
     deleteProduct();
   };
@@ -59,8 +63,10 @@
   };
 
   const removeProduct = (index) => {
+    clearInterval(intervalId);
     products = [...products.slice(0, index), ...products.slice(index + 1)];
     renderProducts();
+    startInterval();
   };
 
   const deleteProduct = () => {
@@ -69,7 +75,6 @@
     deleteButtons.forEach((deleteButton, index) => {
       deleteButton.addEventListener("click", () => {
         removeProduct(index);
-        deleteProduct();
       });
     });
   };
@@ -84,12 +89,12 @@
       const timeFlow = formattedTime.toLocaleString();
       if (!products) return;
       htmlString += `
-      
-        <li class="list__item">${product.product}</li> 
+
+        <li class="list__item">${product.product}</li>
         <span class="list__item--dateIn">
           <label>Date in:
           <input value=${product.timeIn} class="form__input js-formInput" name="expire date" readonly></label>
-        </span> 
+        </span>
         <span class="list__item--exDate">
           <label>Date out:
           <input value=${product.timeOut}  class="form__input" name="time" readonly></label>
@@ -101,6 +106,8 @@
 
     const productsContainer = document.querySelector(".js-productsList");
     productsContainer.innerHTML = htmlString;
+
+    deleteProduct();
   };
 
   const onFormSubmit = (e) => {
@@ -113,13 +120,14 @@
     const timer = Math.floor((endTime - currentTime) / 1000);
     const formattedTime = formatTime(timer);
     const timeFlow = formattedTime.toLocaleString();
-    // const intervalId = setInterval(timeCalculation, 1000);
 
     if (!newProduct) {
       return;
     }
+    clearInterval(intervalId);
     timeCalculation();
     addNewproduct(newProduct, startingDate, timeLeft, timeFlow);
+    startInterval();
     clearInput();
   };
 
@@ -129,7 +137,7 @@
     headerTime();
     setInterval(headerTime, 1000);
     renderProducts();
-    deleteProduct();
+    startInterval();
   };
 
   init();
