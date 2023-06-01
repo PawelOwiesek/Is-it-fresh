@@ -22,7 +22,7 @@
     const minutes = Math.floor((seconds % 3600) / 60);
     const remainingSeconds = seconds % 60;
 
-    return `${days} days ${hours} hours ${minutes} min ${remainingSeconds} s`;
+    return `D ${days} H ${hours} min ${minutes} s ${remainingSeconds} `;
   };
 
   let intervalId;
