@@ -13,6 +13,7 @@ html {
   background-color: #283839;
   border: 1px solid #767676;
   padding-top: 20px;
+  font-family: "Lato", "sans-serif";
 }
 
 @media (max-width: 600px) {
