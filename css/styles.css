@@ -64,7 +64,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 30px 70px;
-  background-image: url(https://thumbs.dreamstime.com/z/orange-fruit-fresh-cutting-slicing-image-background-52381569.jpg);
+  background-image: url(https://i.postimg.cc/tJcYddRV/orange.jpg);
   background-size: cover;
   row-gap: 20px;
   color: #000000;
@@ -93,15 +93,18 @@ html {
 }
 
 .form__products {
+  display: flex;
+  flex-direction: column;
   font-size: 20px;
   padding-left: 10px;
-  color: #040404;
+  color: #ffffff;
   align-items: center;
 }
 
 .form__date {
   font-size: 20px;
   padding-left: 10px;
+  color: #ffffff;
 }
 
 .form__input--text {
@@ -152,6 +155,10 @@ html {
     margin: 10px 0;
   }
 }
+
+.listSection {
+  display: flex;
+}
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 50px;
@@ -167,7 +174,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    margin: 2px;
     padding: 5px;
   }
 }
