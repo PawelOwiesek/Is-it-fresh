@@ -17,12 +17,23 @@
   ];
 
   const formatTime = (seconds) => {
-    const days = Math.floor(seconds / (3600 * 24));
-    const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
+    if (seconds < 0) {
+      return "date expired";
+    } else if (seconds < 260000) {
+      const days = Math.floor(seconds / (3600 * 24));
+      const hours = Math.floor((seconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const remainingSeconds = seconds % 60;
 
-    return `D ${days} H ${hours} min ${minutes} s ${remainingSeconds} `;
+      return `⚠ D ${days} H ${hours} min ${minutes} s ${remainingSeconds} `;
+    } else {
+      const days = Math.floor(seconds / (3600 * 24));
+      const hours = Math.floor((seconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const remainingSeconds = seconds % 60;
+
+      return `D ${days} H ${hours} min ${minutes} s ${remainingSeconds} `;
+    }
   };
 
   let intervalId;
@@ -99,7 +110,7 @@
           <label>Date out:
           <input value=${product.timeOut}  class="form__input" name="time" readonly></label>
         </span>
-        <span class="list__item--timeFlow">Time left: ${timeFlow}</span>
+        <p class="list__item--timeFlow">Time left:<span class="timer"> ${timeFlow}</span></p>
         <button class="removeButton">🗑</button>
       `;
     });

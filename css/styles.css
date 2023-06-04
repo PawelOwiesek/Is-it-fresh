@@ -223,6 +223,11 @@ html {
   padding: 2px;
   font-size: 18px;
 }
+
+.timer {
+  color: #f80101;
+  font-weight: bold;
+}
 .removeButton {
   margin-top: 30px;
   height: 30px;
