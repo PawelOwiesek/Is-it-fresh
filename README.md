@@ -1,6 +1,5 @@
 # Is-it-fresh
-
-![Screenshot 2023-05-30 173442](https://github.com/PawelOwiesek/Is-it-fresh-/assets/121549413/0f45d46e-46a7-43e1-a669-954f8b4be9c8)
+![is-it-fresh new ()](https://github.com/PawelOwiesek/Is-it-fresh-/assets/121549413/b17be00a-fc1c-4cb8-bdd3-5184e02b4e6f)
 
 ![Animation Is-It-Fresh](https://github.com/PawelOwiesek/Is-it-fresh-/assets/121549413/60c8a904-9781-409d-a5f3-82180f0f6866)
 
