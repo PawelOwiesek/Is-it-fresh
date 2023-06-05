@@ -1,8 +1,8 @@
 {
-  const headerTime = () => {
+  const displayHeaderTime = () => {
     const actualDate = new Date();
     const timeString = document.querySelector(".js-timeString");
-    timeString.innerText = actualDate.toLocaleString("nl", {
+    timeString.innerText = actualDate.toLocaleString(undefined, {
       dateStyle: "full",
       timeStyle: "medium",
     });
@@ -92,6 +92,7 @@
 
   const renderProducts = () => {
     let htmlString = "";
+
     products.forEach((product) => {
       const currentTime = new Date();
       const endTime = new Date(product.timeOut);
@@ -100,18 +101,24 @@
       const timeFlow = formattedTime.toLocaleString();
       if (!products) return;
       htmlString += `
-
-        <li class="list__item">${product.product}</li>
-        <span class="list__item--dateIn">
-          <label>Date in:
-          <input value=${product.timeIn} class="form__input js-formInput" name="expire date" readonly></label>
-        </span>
-        <span class="list__item--exDate">
-          <label>Date out:
-          <input value=${product.timeOut}  class="form__input" name="time" readonly></label>
-        </span>
-        <p class="list__item--timeFlow">Time left:<span class="timer"> ${timeFlow}</span></p>
-        <button class="removeButton">🗑</button>
+        
+        <div>
+        <span class="listSection__itemLabel">Product: </span> 
+        <p  class="listSection__item" >${product.product}</p>   
+       </div>
+           <label class="listSection__dateInLabel">Date in:
+        <input value=${product.timeIn} class="listSection__date js-formInput" name="expire date" readonly>
+           </label>
+           <label class="listSection__expireDateLabel">Date out:
+        <input value=${product.timeOut}  class="listSection__date" name="time" readonly>
+           </label>
+        <div class="listSection__timeFlow">
+        <p class="listSection__timeLeftLabel">
+        Time left:<br />
+        <span class="listSection__timer"> ${timeFlow}</span>
+        </p>
+        </div>
+        <button class="listSection__button removeButton">🗑</button>
       `;
     });
 
@@ -145,8 +152,8 @@
   const init = () => {
     const form = document.querySelector(".js-form");
     form.addEventListener("submit", onFormSubmit);
-    headerTime();
-    setInterval(headerTime, 1000);
+    displayHeaderTime();
+    setInterval(displayHeaderTime, 1000);
     renderProducts();
     startInterval();
   };
