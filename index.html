@@ -8,6 +8,9 @@
     <link rel="icon" href="images/ico1.jpg" />
     <script defer src="js/script.js"></script>
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/Header/index.css" rel="stylesheet" />
+    <link href="css/Form/index.css" rel="stylesheet" />
+    <link href="css/List/index.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
@@ -25,18 +28,17 @@
 
   <body class="body">
     <header class="header js-header">
-      <h1 class="header__title">Fresh check list.</h1>
+      <h1 class="header__title">Fresh check list</h1>
       <p class="header__timeString js-timeString"></p>
     </header>
     <main>
       <section>
         <form class="form js-form">
-          <h2 class="form__title">List of products and the expiration date.</h2>
           <p>
             <label class="form__products"
               >Add a new product:
               <input
-                class="form__input--text js-newProduct js-addProduct"
+                class="form__products--text js-newProduct js-addProduct"
                 name="product"
                 required
               />
@@ -45,23 +47,34 @@
           <p>
             <label class="form__date"
               >Set the entry date:
-              <input class="form__input js-dateInput" type="date" required />
-            </label>
-          </p>
-          <p>
-            <label class="form__date"
-              >Expiration date:<input
-                class="form__input js-timeLeft"
+              <input
+                class="form__date--input js-dateInput"
                 type="date"
                 required
               />
             </label>
           </p>
-          <button class="button js-button">Add product to list.</button>
+          <p>
+            <label class="form__date"
+              >Expiration date:<input
+                class="form__date--input js-timeLeft"
+                type="date"
+                required
+              />
+            </label>
+          </p>
+          <p class="form__button">
+            <button class="form__button--button js-button">
+              Add product to list.
+            </button>
+          </p>
         </form>
       </section>
       <section class="listSection">
-        <ul class="js-productsList js-dates list"></ul>
+        <h2 class="listSection__title">
+          List of products and the expiration date:
+        </h2>
+        <ul class="js-productsList js-dates listSection__list"></ul>
       </section>
     </main>
   </body>
