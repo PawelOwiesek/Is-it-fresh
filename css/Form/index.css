@@ -1,0 +1,73 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 90px 70px;
+  background-image: url(https://i.postimg.cc/tJcYddRV/orange.jpg);
+  background-size: cover;
+  row-gap: 20px;
+  color: #000000;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    flex-basis: 80%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+}
+
+.form__products {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  padding-left: 10px;
+  color: #ffffff;
+  align-items: center;
+}
+
+.form__products--text {
+  margin-left: 10px;
+  font-size: 18px;
+  padding: 5px;
+  max-width: 200px;
+}
+
+.form__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  padding-left: 10px;
+  color: #ffffff;
+}
+
+.form__date--input {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  padding: 5px;
+  max-width: 200px;
+}
+
+.form__button {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__button--button {
+  font-size: 18px;
+  background-color: teal;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  max-width: 200px;
+  align-self: auto;
+}

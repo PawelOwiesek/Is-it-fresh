@@ -1,0 +1,145 @@
+.listSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listSection__title {
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 1200px) {
+  .listSection__title {
+    display: flex;
+    flex-direction: column;
+    max-width: 280px;
+  }
+}
+
+.listSection__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 280px 50px;
+  column-gap: 10px;
+  margin-top: 20px;
+  background-color: hsl(180, 100%, 20%);
+  font-size: 20px;
+  padding: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .listSection__list {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+  }
+}
+
+.listSection__itemLabel {
+  grid-column-start: 1;
+  max-width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 0 0;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.listSection__item {
+  grid-column-start: 1;
+  max-width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #fff;
+  margin: 0 0 10px 10px;
+  padding: 10px;
+  word-break: break-all;
+}
+
+.listSection__expireDateLabel,
+.listSection__dateInLabel,
+.listSection__timeLeftLabel {
+  max-width: fit-content;
+  margin: 15px;
+  align-self: flex-start;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.listSection__dateInLabel {
+  grid-column-start: 2;
+  letter-spacing: 3px;
+}
+
+.listSection__expireDateLabel {
+  grid-column-start: 3;
+  letter-spacing: 3px;
+}
+
+@media screen and (max-width: 1200px) {
+  .listSection__dateInLabel,
+  .listSection__expireDateLabel {
+    display: inline-block;
+    width: 120px;
+  }
+}
+
+.listSection__date {
+  max-width: 150px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .listSection__date {
+    max-width: 120px;
+  }
+}
+
+.listSection__timeFlow {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.listSection__timer {
+  display: block;
+  color: #f80101;
+  font-weight: bold;
+  grid-column-start: 4;
+  padding: 10px;
+  background-color: #fff;
+  margin: 0;
+  min-width: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  .listSection__timer {
+    font-size: 18px;
+  }
+}
+
+.listSection__button {
+  margin-top: 30px;
+  height: 30px;
+  width: 30px;
+  background-color: #f80101;
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+  .listSection__button {
+    align-self: center;
+    margin-bottom: 10px;
+  }
+}
