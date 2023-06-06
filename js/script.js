@@ -12,30 +12,26 @@
     {
       product: "Tomatoes",
       timeIn: "2023-06-18 07:06:00",
-      timeOut: "2024-06-18 07:06:00",
+      timeOut: "2023-06-06 12:06:00",
     },
   ];
 
   const formatTime = (seconds) => {
+    const threeDays = 260000;
     if (seconds < 0) {
       return "date expired";
-    } else if (seconds < 260000) {
-      const days = Math.floor(seconds / (3600 * 24));
-      const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-      const minutes = Math.floor((seconds % 3600) / 60);
-      const remainingSeconds = seconds % 60;
-
-      return `⚠ D ${days} H ${hours} min ${minutes} s ${remainingSeconds} `;
-    } else {
-      const days = Math.floor(seconds / (3600 * 24));
-      const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-      const minutes = Math.floor((seconds % 3600) / 60);
-      const remainingSeconds = seconds % 60;
-
-      return `D ${days} H ${hours} min ${minutes} s ${remainingSeconds} `;
     }
-  };
 
+    const date = new Date(seconds * 1000);
+    const days = Math.floor(seconds / (3600 * 24));
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const remainingSeconds = date.getSeconds();
+
+    return `${
+      seconds < threeDays ? "⚠" : ""
+    } D ${days} H ${hours} min ${minutes} s ${remainingSeconds}`;
+  };
   let intervalId;
 
   const timeCalculation = () => {
@@ -107,7 +103,7 @@
         <p  class="listSection__item" >${product.product}</p>   
        </div>
            <label class="listSection__dateInLabel">Date in:
-        <input value=${product.timeIn} class="listSection__date js-formInput" name="expire date" readonly>
+        <input value=${product.timeIn} class="listSection__date js-formInput" name="expire date"  readonly>
            </label>
            <label class="listSection__expireDateLabel">Date out:
         <input value=${product.timeOut}  class="listSection__date" name="time" readonly>
