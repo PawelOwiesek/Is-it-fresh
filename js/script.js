@@ -27,11 +27,14 @@
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const remainingSeconds = date.getSeconds();
+    const formattedMinutes = String(minutes).padStart(2, "0");
+    const formattedSeconds = String(remainingSeconds).padStart(2, "0");
 
     return `${
       seconds < threeDays ? "⚠" : ""
-    } D ${days} H ${hours} min ${minutes} s ${remainingSeconds}`;
+    } D ${days} H ${hours} min ${formattedMinutes} s ${formattedSeconds}`;
   };
+
   let intervalId;
 
   const timeCalculation = () => {
