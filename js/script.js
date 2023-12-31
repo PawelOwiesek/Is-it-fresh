@@ -62,6 +62,7 @@
         timeFlow: timeFlow,
       },
     ];
+    localStorage.setItem("products", JSON.stringify(products));
     renderProducts();
     deleteProduct();
   };
@@ -75,6 +76,7 @@
   const removeProduct = (index) => {
     clearInterval(intervalId);
     products = [...products.slice(0, index), ...products.slice(index + 1)];
+    localStorage.setItem("products", JSON.stringify(products));
     renderProducts();
     startInterval();
   };
@@ -149,6 +151,11 @@
   };
 
   const init = () => {
+    const storedProducts = localStorage.getItem("products");
+    if (storedProducts) {
+      products = JSON.parse(storedProducts);
+    }
+
     const form = document.querySelector(".js-form");
     form.addEventListener("submit", onFormSubmit);
     displayHeaderTime();
